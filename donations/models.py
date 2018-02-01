@@ -16,6 +16,8 @@ from datetime import timedelta
 
 class PremiumDonation(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    keys = models.IntegerField(default = 0)
+    dollars = models.FloatField(default = 0.0)
     end_time = models.DateTimeField()
 
     def __unicode__(self):
@@ -23,6 +25,19 @@ class PremiumDonation(models.Model):
 
     class Meta:
         get_latest_by = "end_time"
+
+class PremiumDonationHistory(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL)
+    keys = models.IntegerField(default = 0)
+    dollars = models.FloatField(default = 0.0)
+    start_time = models.DateTimeField(auto_now_add=True)
+    end_time = models.DateTimeField()
+
+    def __unicode__(self):
+        return "%s donated %s keys and %s dollars" % (self.user, self.keys, self.dollars)
+
+    class Meta:
+        verbose_name_plural = "Premium donation history"
 
 
 @receiver(post_delete, sender=PremiumDonation)
@@ -41,6 +56,12 @@ def premium_post_save(sender, instance, created, **kwargs):
         profile = Profile.objects.get(user=instance.user)
         profile.status = "Premium"
         profile.save()
+    PremiumDonationHistory(
+        user = instance.user,
+        keys = instance.keys,
+        dollars = instance.dollars,
+        end_time = instance.end_time
+    ).save()
 
 @receiver(valid_ipn_received)
 def add_premium(sender, **kwargs):
@@ -66,6 +87,7 @@ def add_premium(sender, **kwargs):
                         user=social_user.user,
                         end_time=end_time
                     )
+            p.dollars = ipn.obj.mc_gross
             p.save()
 
 def reload_admins():
