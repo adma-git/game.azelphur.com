@@ -38,6 +38,7 @@ class PremiumDonationHistory(models.Model):
 
     class Meta:
         verbose_name_plural = "Premium donation history"
+        get_latest_by = "end_time"
 
 
 @receiver(post_delete, sender=PremiumDonation)
