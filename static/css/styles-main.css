@@ -22,7 +22,7 @@ body {
 
 /* Generic Links */
 a {
-    color: #fb8d31;
+    color: #4C4C4C;
     text-decoration: none;
     cursor: pointer;
     transition: color 0.5s ease;
@@ -39,7 +39,7 @@ a.link-color-normal {
     background-color: inherit !important;
 }
 .btn {
-    background-color: #fb8523 !important;
+    background-color: #274072 /* Button */ !important;
     margin-bottom: 7px;
 }
 
@@ -50,7 +50,7 @@ a.link-color-normal {
 
 a:hover {
     text-decoration: none;
-    color: #C45D16;
+    color: #2F4E8C;
 }
 .btn:hover,
 nav a:hover {
@@ -217,7 +217,7 @@ hr {
     height: 1px;
     border: 0;
     border-top: 1px solid #D4D4D4;
-    padding: 0; 
+    padding: 0;
 }
 
 .content-container > h3:first-child,
@@ -395,7 +395,7 @@ img.avatar-messages {
 }
 
 #header-main > #header-brand {
-    background-color: #fb9f32;
+    background-color: #1E325A; /* Heading Colour */
     padding: 30px 0px;
 }
 #header-main > #header-brand > .container {
@@ -450,7 +450,7 @@ img.avatar-messages {
     height: 54px;
 }
 #nav-main {
-    background: #fb8523;
+    background: #15233F /* Darker Header */;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.16);
     height: 54px;
     z-index: 900;
@@ -468,7 +468,7 @@ img.avatar-messages {
     height: 50px !important;
 }
 #nav-main ul > li:hover {
-    background: #d86200 !important;
+    background: #1E325A /* Hover Lighten */ !important;
 }
 #nav-main ul > li a:hover {
     background: transparent !important;
@@ -526,14 +526,14 @@ img.avatar-messages {
 
 }
 .nav-main-bar-dropdown > li {
-    background-color: #fb8523;
+    background-color: #15233F /* Darker Header */;
     min-height: 40px !important;
 }
 .nav-main-bar-dropdown > li.active {
     background-color: #e1771f !important;
 }
 .nav-main-bar-dropdown > li:hover {
-    background: #d86200 !important;
+    background: #1E325A /* Hover Lighten */ !important;
 }
 .nav-main-bar-dropdown > li > a {
     color: #fff;
@@ -558,7 +558,7 @@ nav li > a > i.fa-search {
     left: 0;
     right: 0;
     z-index: 500;
-    background: #fb8523;
+    background: #15233F /* Darker Header */;
     display: none;
 }
 #nav-main-search.active {
@@ -837,7 +837,7 @@ ul.pagination li.active {
     margin: 0px !important;
 }
 .grid-table .table-header {
-    background-color: #FB9F32;
+    background-color: #1E325A; /* Heading Colour */
     color: #FFF;
     font-size: 14px;
 }
@@ -1070,7 +1070,7 @@ ul.pagination li.active {
 
 /* Forum - Header */
 #content-main.forum .forum-header > li {
-    background-color: #fb9f32;
+    background-color: #1E325A; /* Heading Colour */
     color: #fff;
 }
 #content-main.forum .forum-header > li > dl {
@@ -1197,7 +1197,7 @@ ul.pagination li.active {
 }
 #content-main.forum.forum-posts .forum-post-container > .forum-post-body blockquote {
     margin-top: 0px;
-    border-color: #FB9F32;
+    border-color: #1E325A; /* Heading Colour */
     padding-left: 1.1rem;
 }
 #content-main.forum.forum-posts .forum-post-container > .forum-post-body blockquote > em {
@@ -1505,7 +1505,7 @@ dl.styled-dl > dd.full-width {
 .list-side-by-side > ul {
     margin: 0px;
 }
-.list-side-by-side > ul > li { 
+.list-side-by-side > ul > li {
     margin-bottom: 3px;
 }
 .list-side-by-side > ul > li:before {
@@ -1514,7 +1514,7 @@ dl.styled-dl > dd.full-width {
 }
 
 @media screen and (min-width: 601px) {
-    .list-side-by-side > ul > li { 
+    .list-side-by-side > ul > li {
         width: 50%;
         float: left;
 
@@ -1636,7 +1636,7 @@ dl.styled-dl > dd.full-width {
 /* Footer */
 #footer-main {
     margin-top: 0px !important;
-    border-top: 2px solid #fb8d31;
+    border-top: 2px solid #2F4E8C;
     background: #2e2e2e;
     color: #eee;
     padding-top: 00px;
