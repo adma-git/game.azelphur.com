@@ -6,13 +6,13 @@
 {% block title %}{% endblock %}
 
 {% block main_content %}
-    {% if donation %}
+    {% if latestdonation %}
     <div class="content-container">
         <h3>Your donation</h3>
         {% if donation_ended %}
-            <p>Thanks for donating, Your premium expired on {{ donation.end_time }}</p>
+            <p>Thanks for donating, Your premium expired on {{ latestdonation.end_time }}</p>
         {% else %}
-            <p>Thanks for donating, you currently have premium! Your premium expires on {{ donation.end_time }} Donating again will extend your current premium time.</p>
+            <p>Thanks for donating, you currently have premium! Your premium expires on {{ latestdonation.end_time }} Donating again will extend your current premium time.</p>
         {% endif %}
     </div>
     {% endif %}

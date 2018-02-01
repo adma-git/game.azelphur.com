@@ -27,15 +27,15 @@ class DonateView(FormView):
         context['steam'] = self._get_steam()
         if self.request.user.is_authenticated():
             try:
-                context['donation'] = PremiumDonation.objects.filter(user=self.request.user).last()
-                if context['donation'].end_time > timezone.now():
+                context['latestdonation'] = PremiumDonationHistory.objects.filter(user=self.request.user).last()
+                if context['latestdonation'].end_time > timezone.now():
                     context['donation_ended'] = False
                 else:
                     context['donation_ended'] = True
-            except PremiumDonation.DoesNotExist:
-                context['donation'] = None
+            except PremiumDonationHistory.DoesNotExist:
+                context['latestdonation'] = None
         else:
-            context['donation'] = None
+            context['latestdonation'] = None
         return context
 
     def _get_steam(self):
@@ -104,6 +104,7 @@ class KeyDonation(APIView):
                     user=social_user.user,
                     end_time=end_time
                 )
+            p.keys = serializer.data["amount"]
             p.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
