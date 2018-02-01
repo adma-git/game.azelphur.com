@@ -5,7 +5,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils import timezone
 from .forms import DonateForm
-from .models import PremiumDonation
+from .models import PremiumDonationHistory
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -27,7 +27,7 @@ class DonateView(FormView):
         context['steam'] = self._get_steam()
         if self.request.user.is_authenticated():
             try:
-                context['latestdonation'] = PremiumDonationHistory.objects.filter(user=self.request.user).last()
+                context['latestdonation'] = PremiumDonationHistory.objects.filter(user=self.request.user).latest()
                 if context['latestdonation'].end_time > timezone.now():
                     context['donation_ended'] = False
                 else:
