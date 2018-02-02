@@ -30,7 +30,7 @@ class PremiumDonationHistory(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
     keys = models.IntegerField(default = 0)
     dollars = models.FloatField(default = 0.0)
-    start_time = models.DateTimeField(auto_now_add=True)
+    start_time = models.DateTimeField(default=timezone.now)
     end_time = models.DateTimeField()
 
     def __unicode__(self):
