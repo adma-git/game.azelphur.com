@@ -12,7 +12,7 @@
         {% if donation_ended %}
             <p>Thanks for donating, Your premium expired on {{ latestdonation.end_time }}</p>
         {% else %}
-            <p>Thanks for donating, you currently have premium! Your premium expires on {{ latestdonation.end_time }} Donating again will extend your current premium time.</p>
+            <p>Thanks for donating, you currently have premium! Your premium expires on {{ latestdonation.end_time }} (UTC timezone) Donating again will extend your current premium time.</p>
         {% endif %}
     </div>
     {% endif %}
