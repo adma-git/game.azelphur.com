@@ -11,19 +11,23 @@
 
         <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
 
-        <link rel="apple-touch-icon" sizes="60x60" href="{% static 'img/favicon/apple-touch-icon-60x60.png' %}">
-        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/favicon/apple-touch-icon-72x72.png' %}">
-        <link rel="apple-touch-icon" sizes="120x120" href="{% static 'img/favicon/apple-touch-icon-120x120.png' %}">
-        <link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-32x32.png' %}" sizes="32x32">
-        <link rel="icon" type="image/png" href="{% static 'img/favicon/android-chrome-192x192.png' %}" sizes="192x192">
-        <link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-96x96.png' %}" sizes="96x96">
-        <link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-16x16.png' %}" sizes="16x16">
-        <link rel="manifest" href="{% static 'img/favicon/manifest.json' %}">
-        <link rel="mask-icon" href="{% static 'img/favicon/safari-pinned-tab.svg' %}" color="#ef6c00">
-        <link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}">
-        <meta name="msapplication-TileColor" content="#ffc40d">
-        <meta name="msapplication-TileImage" content="{% static 'img/favicon/mstile-144x144.png' %}">
-        <meta name="msapplication-config" content="{% static 'img/favicon/browserconfig.xml' %}">
+        <link rel="apple-touch-icon" sizes="57x57" href="{% static '/img/favicon/apple-icon-57x57.png' %}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{% static '/img/favicon/apple-icon-60x60.png' %}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static '/img/favicon/apple-icon-72x72.png' %}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{% static '/img/favicon/apple-icon-76x76.png' %}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static '/img/favicon/apple-icon-114x114.png' %}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{% static '/img/favicon/apple-icon-120x120.png' %}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{% static '/img/favicon/apple-icon-144x144.png' %}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{% static '/img/favicon/apple-icon-152x152.png' %}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static '/img/favicon/apple-icon-180x180.png' %}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{% static '/img/favicon/android-icon-192x192.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static '/img/favicon/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{% static '/img/favicon/favicon-96x96.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static '/img/favicon/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static '/img/favicon/manifest.json' %}/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{% static '/img/favicon/ms-icon-144x144.png' %}">
+
         {% if settings.SITE_TITLE %}
         <meta name="apple-mobile-web-app-title" content="{{ settings.SITE_TITLE }}">
         <meta name="application-name" content="{{ settings.SITE_TITLE }}">
@@ -53,7 +57,7 @@
         <header id="header-main">
             <div id="header-brand">
                 <div class="container">
-                    <a href="/" id="site-logo"><img src="{% static 'img/tf2-logo-1.png' %}" alt="" /></a>
+                    <a href="/" id="site-logo"><img src="{% static 'img/logo.png' %}" alt="" /></a>
                     <div id="site-branding">
                         <h1 id="site-title">
                             {% if settings.SITE_TITLE %}<a href="/">{{ settings.SITE_TITLE }}</a>{% endif %}

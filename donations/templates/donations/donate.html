@@ -19,16 +19,17 @@
     <div class="content-container">
         <h3>{% trans "Donate / Premium" %}</h3>
         <p>{% blocktrans %}Hey, thanks for considering a donation to our community!<br />
-            Running a large community with multiple servers isn't cheap, our monthly running cost is around $180. So your kind donations will be going towards the costs of our hardware and will enable us to keep growing our community and invest in future improvements!{% endblocktrans %}<p/>
+            Running a large community with multiple servers isn't cheap, our monthly running cost is around $40. So your kind donations will be going towards the costs of our hardware and will enable us to keep growing our community and invest in future improvements!{% endblocktrans %}<p/>
         <p>{% blocktrans %}When you donate, will we thank you by making you a premium member, which grants you instant access to the following awesome features on our TF2 servers!{% endblocktrans %}</p>
         <h6>{% trans 'Premium benefits' %}</h6>
         <ul class="restyle-list">
             <li><span class="text-highlight">{% trans 'Reserved slot' %}</span> - {% trans "There's always space for you!" %}</li>
-            <li><span class="text-highlight">{% trans 'Premium chat status' %}</span> - {% trans 'Let everyone know you support our community with full team coloured text when you talk!' %}</li>
-            <li><span class="text-highlight">{% trans 'Third person' %}</span> - {% trans 'Get a third person view!' %}</li>
-            <li><span class="text-highlight">{% trans 'Particle trails' %}</span> - {% trans 'Enable loads of sweet particle trails effects on yourself!' %}</li>
-            <li><span class="text-highlight">{% trans 'RTD buff' %}</span> - {% trans 'Get a 70% chance of a good RTD effect on RTD enabled servers!' %}</li>
-            <li><span class="text-highlight">{% trans 'ForceTheVote' %}</span> - {% trans 'Start a vote to change to a specific map of your choice on multi-map servers!' %}</li>
+            <li><span class="text-highlight">{% trans 'Muting privileges' %}</span> - {% trans 'Don't get auto-muted on Jailbreak!' %}</li>
+            <li><span class="text-highlight">{% trans 'Chat colours !ccc' %}</span> - {% trans 'Have a green coloured tag and the ability to change your name colour!' %}</li>
+            <li><span class="text-highlight">{% trans 'Halloween footsteps !footsteps' %}</span> - {% trans 'Enable halloween footsteps!' %}</li>
+            <li><span class="text-highlight">{% trans 'Taunt menu !taunts' %}</span> - {% trans 'Use any taunt in the game!' %}</li>
+            <li><span class="text-highlight">{% trans 'Resize your body !resizemy(head/hands/torso)' %}</span> - {% trans 'Resize your head, hands and torso!' %}</li>
+            <li><span class="text-highlight">{% trans 'And more to come...' %}</span></li>
         </ul>
     </div>
     <div class="row row-no-marg-bottom">
@@ -65,7 +66,7 @@
         <h4>{% trans 'Donate with TF2 keys' %}</h4>
         <p class="no-padding-top">{% blocktrans %}Aren't able to donate with real money but still want access to these fantastic features? Well, you can now donate using TF2 keys! The process is automated and amazingly simply. Just add <a href="https://steamcommunity.com/id/azelbot" rel="nofollow" target="_blank">AzelBot</a> on Steam, send it a trade request and add some keys! 1 key will get you a week, 3 keys a month and 5 keys 3 months.{% endblocktrans %}</p>
     </div>
-    <p class="no-padding-bottom"><small class="grey-text text-darken-1">{% blocktrans %}* By donating to Azelphur Servers you are not paying for digital goods, we are offering these benefits as a thank you for your kind donation. Donations are non-refundable and do not give you immunity from any server rules.{% endblocktrans %}</small></p>
+    <p class="no-padding-bottom"><small class="grey-text text-darken-1">{% blocktrans %}* By donating to Callister Servers you are not paying for digital goods, we are offering these benefits as a thank you for your kind donation. Donations are non-refundable and do not give you immunity from any server rules.{% endblocktrans %}</small></p>
 
     {% if not steam and user.is_authenticated %}
         <div id="modal-steam" class="modal">
