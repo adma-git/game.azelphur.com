@@ -5,7 +5,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils import timezone
 from .forms import DonateForm
-from .models import PremiumDonationHistory
+from .models import PremiumDonationHistory, PremiumDonation
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
