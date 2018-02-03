@@ -232,7 +232,7 @@ INSTALLED_APPS = (
     "rest_framework",
     'rest_framework.authtoken',
     "djangobb_forum",
-    "social.apps.django_app.default",
+    #"social.apps.django_app.default",
     "social_django",
     "donations",
     "paypal.standard.ipn",
@@ -268,6 +268,9 @@ TEMPLATES = [
                 "donations.processors.donations",
                 "game_info.processors.servers",
                 "djangobb_forum.context_processors.forum_settings",
+
+                'social_django.context_processors.backends',  # <--
+                'social_django.context_processors.login_redirect', # <--
             ],
             "builtins": [
                 "mezzanine.template.loader_tags",
@@ -305,6 +308,8 @@ MIDDLEWARE_CLASSES = (
     'djangobb_forum.middleware.LastLoginMiddleware',
     'djangobb_forum.middleware.UsersOnline',
     'djangobb_forum.middleware.TimezoneMiddleware',
+
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 )
 
 # Store these package names here as they may change in the future since
