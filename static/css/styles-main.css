@@ -1,4 +1,4 @@
-* {
+﻿* {
     box-sizing: border-box;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
@@ -356,6 +356,10 @@ img.avatar-small {
 }
 img.left {
     margin-right: 10px;
+}
+
+img.imgcenter {
+    vertical-align: middle;
 }
 
 /* Forum Messages */
