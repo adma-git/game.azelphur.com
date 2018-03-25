@@ -30,20 +30,8 @@ urlpatterns = i18n_patterns(
     url(r'^messages/', include('django_messages.urls')),
     url(r'^paypal/', include('paypal.standard.ipn.urls')),
     url(r'^faq/', include('faq.urls')),
-    url(
-        r'^accounts/password_change/',
-        password_change,
-        {'post_change_redirect': '/', 'template_name': 'accounts/password_change.html'},
-        name='account_change_password'
-    ),
     url('', include('social.apps.django_app.urls', namespace='social')),
     # Temp Ingame Pages
-    url(r'^rules/ingame/tf2/$', TemplateView.as_view(template_name='ingame/tf2/rules.html')),
-    url(r'^radio/ingame/tf2/$', radio),
-    url(r'^servers/ingame/tf2/$', TemplateView.as_view(template_name='ingame/tf2/servers.html')),
-    url(r'^staff/ingame/tf2/$', staff),
-    url(r'^news/ingame/tf2/$', TemplateView.as_view(template_name='ingame/tf2/news.html')),
-    url(r'^howtosurf/ingame/tf2/$', TemplateView.as_view(template_name='ingame/tf2/howtosurf.html')),
 )
 
 if settings.USE_MODELTRANSLATION:

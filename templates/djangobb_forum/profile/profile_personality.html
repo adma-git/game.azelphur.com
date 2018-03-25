@@ -10,36 +10,6 @@
 		<h3>{% trans "Personality Settings" %}</h3>
 		<form id="profile4" method="post">
 			{% csrf_token %}
-			<div class="row">
-				<div class="col s12">
-					<h5>{% trans "Set your avatar display options" %}</h5>
-					{{ profile.forum_profile.avatar.errors }}
-					<p>{% trans "An avatar is a small image that will be displayed with all your posts. You can upload an avatar by clicking the link below. The checkbox 'Use avatar' below must be checked in order for the avatar to be visible in your posts." %}</p>
-					{% if forum_settings.GRAVATAR_SUPPORT %}
-						<p>{% trans "We also support" %} <a href="https://gravatar.com" rel="nofollow">Gravatar</a> {% trans "which is an external service that provides globally recognized avatars. Simply create an account with" %} <a href="https://gravatar.com" rel="nofollow">Gravatar</a>, {% trans "upload your avatar to their site and it will be used automatically by any site thats supports there service. For your Gravatar to work here, you must not have uploaded your own avatar below (if you have, you can simply delete it)." %}</p>
-					{% endif %}
-				</div>
-			</div>
-			<div class="row">
-				<div class="col s12 m6">
-					{% if profile.forum_profile.avatar %}
-						<img src="{{ profile.forum_profile.avatar.url }}" alt="User Avatar" class="left pad-right" />
-					{% else %}
-						{% if forum_settings.GRAVATAR_SUPPORT %}
-							<img src="{% gravatar profile.email %}" alt="User Avatar" class="left pad-right" />
-						{% endif %}
-					{% endif %}
-					{{ form.show_avatar.errors }}
-					<p class="no-mar-top">
-						{{ form.show_avatar }}
-						<label for="id_show_avatar">
-							{% trans "Use avatar" %}
-							{% if not profile.forum_profile.avatar and forum_settings.GRAVATAR_SUPPORT %}<small>({% trans "Currently using Gravatar" %})</small>{% endif %}
-						</label>
-					</p>
-					<a class="btn" href="{% url 'djangobb:forum_profile_upload_avatar' profile.username %}">{% trans "Upload or delete avatar" %}</a>
-				</div>
-			</div>
 			<div class="row no-mar-bottom">
 				<div class="col s12">
 					<h5>{% trans "Your forum signature" %}</h5>

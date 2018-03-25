@@ -28,15 +28,6 @@
 				</div>
 			</div>
 			<div class="row no-mar-bottom">
-				<div class="col s12 pad-bottom">
-					{% if user.is_superuser %}
-						<a class="btn-flat btn-sm" href="{% url 'admin:auth_user_password_change' profile.id %}">{% trans "Change password" %}</a>
-					{% else %}
-						<a class="btn-flat btn-sm" href="{% url 'account_change_password' %}">{% trans "Change password" %}</a>
-					{% endif %}
-				</div>
-			</div>
-			<div class="row no-mar-bottom">
 				<div class="col s12 input-field">
 					{{ form.time_zone.errors }}
                     {{ form.time_zone }}

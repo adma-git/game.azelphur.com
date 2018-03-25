@@ -13,16 +13,10 @@
         <dd class="forum-latest">
         {% if forum.updated %}
             {% if forum.last_post.topic %}
-                {% if forum.last_post.user.forum_profile.avatar and forum.last_post.user.forum_profile.show_avatar %}
+                {% if forum.last_post.user.forum_profile.show_avatar %}
                     <a href="{% url 'djangobb:forum_profile' forum.last_post.user.username %}" class="avatar">
-                        <img src="{{  forum.last_post.user.forum_profile.avatar.url }}" alt="User Avatar" />
+                        <img src="{{  forum.last_post.user.forum_profile.user.social_auth.get.extra_data.player.avatarmedium }}" alt="User Avatar" />
                     </a>
-                {% else %}
-                    {% if forum_settings.GRAVATAR_SUPPORT and forum.last_post.user.forum_profile.show_avatar %}
-                        <a href="{% url 'djangobb:forum_profile' forum.last_post.user.username %}" class="avatar">
-                            <img src="{% gravatar forum.last_post.user.email %}" alt="User Avatar" />
-                        </a>
-                    {% endif %}
                 {% endif %}
                 <a href="{{ forum.last_post.get_absolute_url }}"><time datetime="{{ forum.last_post.created|date:'c' }}">{% forum_time forum.last_post.created %}</time></a><br />
                 {% trans "by" %} <a class="link-color-normal" href="{% url 'djangobb:forum_profile' forum.last_post.user.username %}">{{ forum.last_post.user.username|safe }}</a>

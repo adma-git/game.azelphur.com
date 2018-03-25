@@ -5,16 +5,10 @@
     <div id="comment-{{ comment.id }}" class="comment {% if comment.by_author %} comment-author{% endif %}">
         {% editable comment.is_public comment.is_removed %}
             {% if not comment.is_removed and comment.is_public or request.user.is_staff %}
-                {% if comment.user.forum_profile.avatar and comment.user.forum_profile.show_avatar %}
+                {% if comment.user.forum_profile.show_avatar %}
                     <a href="{% url 'djangobb:forum_profile' comment.user.username %}" class="comment-user">
-                        <img class="comment-image" src="{{ comment.user.forum_profile.avatar.url }}" alt="User Avatar" class="left avatar-messages" />
+                        <img class="comment-image" src="{{ comment.user.forum_profile.user.social_auth.get.extra_data.player.avatarmedium }}" alt="User Avatar" class="left avatar-messages" />
                     </a>
-                {% else %}
-                    {% if forum_settings.GRAVATAR_SUPPORT and comment.user.forum_profile.show_avatar %}
-                        <a href="{% url 'djangobb:forum_profile' comment.user.username %}" class="comment-user">
-                            <img class="comment-image" src="{% gravatar comment.user.email %}" alt="User Avatar" class="left avatar-messages" />
-                        </a>
-                    {% endif %}
                 {% endif %}
                 <div class="comment-body">
                     <a href="{% url 'djangobb:forum_profile' comment.user.username %}" class="comment-user link-color-normal">{{ comment.user.username }}</a>

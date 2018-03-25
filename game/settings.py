@@ -239,8 +239,8 @@ INSTALLED_APPS = (
     "faq",
     "django_messages",
     "social_auth_filter",
-    "djangobb_to_irc",
-    'django_azelphurmotd',
+   # "djangobb_to_irc",
+  #  'django_azelphurmotd',
 )
 
 TEMPLATES = [

@@ -84,20 +84,12 @@
             <div class="row row-no-marg">
                 <div class="col s12 m3 l2 forum-user">
                 	<dl>
-						{% if post.user.forum_profile.avatar and post.user.forum_profile.show_avatar %}
+						{% if post.user.forum_profile.show_avatar %}
 							<dt class="forum-user-avatar">
                                 <a href="{% url 'djangobb:forum_profile' post.user.username %}">
-                                    <img src="{{ post.user.forum_profile.avatar.url }}" alt="User Avatar" />
+                                    <img src="{{ post.user.forum_profile.user.social_auth.get.extra_data.player.avatarfull }}" alt="User Avatar" />
                                 </a>
                             </dt>
-						{% else %}
-							{% if forum_settings.GRAVATAR_SUPPORT and post.user.forum_profile.show_avatar %}
-								<dt class="forum-user-avatar">
-									<a href="{% url 'djangobb:forum_profile' post.user.username %}">
-										<img src="{% gravatar post.user.email %}" alt="User Avatar" />
-									</a>
-								</dt>
-							{% endif %}
 						{% endif %}
 	                	<dt class="forum-user-link"><a href="{% url 'djangobb:forum_profile' post.user.username %}" class="forum-username">{{ post.user.username }}</a></dt>
 						{% if post.user.forum_profile.status %}

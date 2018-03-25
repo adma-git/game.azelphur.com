@@ -7,13 +7,7 @@
 
 {% block content %}
     <div class="forum-head pad-bottom">
-		{% if profile.forum_profile.avatar and profile.forum_profile.show_avatar %}
-			<img src="{{ profile.forum_profile.avatar.url }}" alt="User Avatar" class="left pad-right" />
-		{% else %}
-			{% if forum_settings.GRAVATAR_SUPPORT and profile.forum_profile.show_avatar %}
-				<img src="{% gravatar profile.email %}" alt="User Avatar" class="left pad-right" />
-			{% endif %}
-		{% endif %}
+		<img src="{{ profile.forum_profile.user.social_auth.get.extra_data.player.avatarfull }}" alt="User Avatar" class="left pad-right" />
         <h3 class="forum-head-title">
             {{ profile }}
             <span class="sub-title">{{ profile.forum_profile.status|default:'Member' }}</span>

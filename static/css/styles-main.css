@@ -400,7 +400,7 @@ img.avatar-messages {
 
 #header-main > #header-brand {
     background-color: #1E325A; /* Heading Colour */
-    padding: 30px 0px;
+    padding: 50px 0px;
 }
 #header-main > #header-brand > .container {
     position: relative;
@@ -1020,7 +1020,7 @@ ul.pagination li.active {
     vertical-align: middle;
 }
 #content-main.forum ul.forum-list > li > dl.topic-closed > dt::before {
-    content: 'Closed';
+    content: 'Locked';
     background: #BF1D00;
     display: inline-block;
     height: 15px;

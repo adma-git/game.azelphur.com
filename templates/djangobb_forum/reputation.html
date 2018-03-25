@@ -7,12 +7,8 @@
 
 {% block content %}
     <div class="forum-head">
-		{% if profile.user.forum_profile.avatar and profile.user.forum_profile.show_avatar %}
-			<img src="{{ profile.user.forum_profile.avatar.url }}" alt="User Avatar" class="left" />
-		{% else %}
-			{% if forum_settings.GRAVATAR_SUPPORT and profile.user.forum_profile.show_avatar %}
-				<img src="{% gravatar profile.user.email %}" alt="User Avatar" class="left" />
-			{% endif %}
+		{% if profile.user.forum_profile.show_avatar %}
+			<img src="{{ profile.user.forum_profile.user.social_auth.get.extra_data.player.avatarmedium }}" alt="User Avatar" class="left" />
 		{% endif %}
         <h3 class="forum-head-title">
             {{ profile.user }}
